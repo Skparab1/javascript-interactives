@@ -10,5 +10,5 @@ set of interactive javascript codes
 - Buildings in New York
   - shows relative heights of some buildings in nyc
 
-- length of train systems
-  - shos relative lengths using train track drawings
+- Length of train systems
+  - shows relative lengths using train track drawings
