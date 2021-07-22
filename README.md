@@ -16,5 +16,5 @@ set of interactive javascript codes
 - Glacier graph
   - graph showing glacier loss sourced from online library
 
-- Hover pen
+- Hover color changing
   - changes color when you hover over the box
