@@ -12,3 +12,9 @@ set of interactive javascript codes
 
 - Length of train systems
   - shows relative lengths using train track drawings
+  
+- Glacier graph
+  - graph showing glacier loss sourced from online library
+
+- Hover pen
+  - changes color when you hover over the box
