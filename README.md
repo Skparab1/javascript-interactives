@@ -18,3 +18,6 @@ set of interactive javascript codes
 
 - Hover color changing
   - changes color when you hover over the box
+
+- Drawing pad
+  - drawing pad with multiple colors
