@@ -18,6 +18,10 @@ var waterlevel = (yearin-2000);
 
 var avgdepth = 12100;
 
+function preload(){
+  map = loadImage("map.jpg");
+}
+
 function draw() {
   
   if (screen_to_display == 'main menu'){
@@ -95,6 +99,127 @@ function draw() {
     fill(0,0,0);
     textSize(60);
     text('Interactive climate change map',550,75);
+    textSize(45);
+    text('How climate change is affecting your area',550,125);
+    
+    image(map, 520, 250, 700, 550);
+    
+    fill(215,0,0);
+    ellipse(150,300,50,50);
+    text('Wildfire',190,315);
+    
+    fill(180,180,0);
+    ellipse(150,450,50,50);
+    text('Drought',190,465);
+    
+    fill(0,215,0);
+    ellipse(150,600,50,50);
+    text('Hurricane',190,615);
+    
+    fill(0,0,215);
+    ellipse(150,750,50,50);
+    text('Flooding',190,765);
+    
+    fill(0,180,180);
+    ellipse(1300,300,50,50);
+    text('Tornado',1350,315);
+    
+    fill(180,0,180);
+    ellipse(1300,450,50,50);
+    text('Snowstorm',1350,465);
+    
+    if (mouseX >= 100 && mouseX <= 450 && mouseY >= 250 && mouseY <= 350){
+      fill(0,0,0);
+      textSize(60);
+      text('Wildfires',1275,575);
+      textSize(35);
+      text('Climate change can cause low humidity ',1275,650);
+      text('and high temperatures',1275,700);
+      text('which can spark wildfires.',1275,750);
+    }
+    
+    if (mouseX >= 100 && mouseX <= 450 && mouseY >= 400 && mouseY <= 500){
+      fill(0,0,0);
+      textSize(60);
+      text('Droughts',1275,575);
+      textSize(35);
+      text('Climate change can cause high temperatures ',1275,650);
+      text('which can quickly evaporate water from lakes',1275,700);
+      text('causing a drought.',1275,750);
+    }
+    
+    if (mouseX >= 100 && mouseX <= 450 && mouseY >= 700 && mouseY <= 800){
+      fill(0,0,0);
+      textSize(60);
+      text('Flooding',1275,575);
+      textSize(35);
+      text('Climate change can cause more rainfall ',1275,650);
+      text('and can raise water level,',1275,700);
+      text('causing flooding.',1275,750);
+    }
+    
+    if (mouseX >= 100 && mouseX <= 450 && mouseY >= 550 && mouseY <= 650){
+      fill(0,0,0);
+      textSize(60);
+      text('Hurricanes',1275,575);
+      textSize(35);
+      text('Climate change can cause warmer weather ',1275,650);
+      text('which fuels hurricanes and can cause',1275,700);
+      text('them to be faster and more distructive.',1275,750); 
+    }
+    
+    if (mouseX >= 1275 && mouseX <= 1575 && mouseY >= 250 && mouseY <= 350){
+      fill(0,0,0);
+      textSize(60);
+      text('Tornados',1275,575);
+      textSize(35);
+      text('Climate change can cause warmer air ',1275,650);
+      text('and faster winds,',1275,700);
+      text('causing tornados.',1275,750);
+    }
+    
+    if (mouseX >= 1275 && mouseX <= 1575 && mouseY >= 400 && mouseY <= 500){
+      fill(0,0,0);
+      textSize(60);
+      text('Snowstorms',1275,575);
+      textSize(35);
+      text('Climate change can affect air currents',1275,650);
+      text('in the atmosphere, which can change weather,',1275,700);
+      text('patterns and cause snowstorms.',1275,750);
+    }
+    
+    fill(215,0,0);
+    ellipse(550,460,30,30);
+    ellipse(623,500,30,30);
+    ellipse(589,380,30,30);
+    ellipse(585,540,30,30);
+    fill(180,180,0);
+    ellipse(585,490,30,30);
+    ellipse(600,580,30,30);
+    ellipse(670,600,30,30);
+    ellipse(730,600,30,30);
+    ellipse(800,650,30,30);
+    fill(0,215,0);
+    ellipse(900,700,30,30);
+    ellipse(1000,700,30,30);
+    ellipse(1100,750,30,30);
+    ellipse(1100,600,30,30);
+    fill(0,0,215);
+    ellipse(1080,700,30,30);
+    ellipse(1140,500,30,30);
+    ellipse(1170,400,30,30);
+    ellipse(580,300,30,30);
+    fill(0,180,180);
+    ellipse(850,400,30,30);
+    ellipse(900,500,30,30);
+    ellipse(800,600,30,30);
+    ellipse(950,550,30,30);
+    fill(180,0,180);
+    ellipse(1110,550,30,30);
+    ellipse(1110,450,30,30);
+    ellipse(800,500,30,30);
+    ellipse(950,450,30,30);
+    ellipse(1000,450,30,30);
     
     if (mouseX >= 50 && mouseX <= 250 && mouseY >= 50 && mouseY <= 150){
       fill(255,255,200);
@@ -280,6 +405,8 @@ function draw() {
     text('Average ocean depth '+avgdepth,425,600);
     
     rect(1400,200,600,850);
+    fill(0,0,0);
+    text('Map of theoretical island', 1400,175);
     fill(0,200,50);
     
     if (waterlevel <= 30){
