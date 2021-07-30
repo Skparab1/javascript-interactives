@@ -29,6 +29,9 @@ var avgdepth = 12100;
 
 function preload(){
   map = loadImage("map.jpg");
+  fire = loadImage("fire.png");
+  drop = loadImage("drop.png");
+  wildfiretable = loadTable("wildfires_fig-1.csv");
 }
 
 function draw() {
@@ -625,6 +628,113 @@ function draw() {
     fill(0,0,0);
     textSize(60);
     text('Wildfire and precipitation graph',550,75);
+    
+    rect(200,200,1500,600);
+    text('1995      2000      2005      2010      2015      2020      2025',200,850);
+    
+    image(fire, 50, 200, 75, 100);
+    textSize(20);
+    text('= 10,000 wildfires',25,350);
+    
+    image(drop, 50, 500, 75, 100);
+    textSize(20);
+    text('= 5 Extreme ',25,650);
+    text('Precipitation ',25,680);
+    text('Events in',25,710);
+    text('United States ',25,740);
+    
+    image(fire, 200, 325, 50, 75);
+    image(fire, 200, 400, 50, 75);
+    image(fire, 200, 475, 50, 75);
+    image(fire, 200, 550, 50, 75);
+    image(fire, 200, 625, 50, 75);
+    image(fire, 200, 700, 50, 75);
+    
+    image(drop, 300, 475, 50, 75);
+    image(drop, 300, 550, 50, 75);
+    image(drop, 300, 625, 50, 75);
+    image(drop, 300, 700, 50, 75);
+    
+    image(fire, 450, 250, 50, 75);
+    image(fire, 450, 325, 50, 75);
+    image(fire, 450, 400, 50, 75);
+    image(fire, 450, 475, 50, 75);
+    image(fire, 450, 550, 50, 75);
+    image(fire, 450, 625, 50, 75);
+    image(fire, 450, 700, 50, 75);
+    
+    image(drop, 550, 400, 50, 75);
+    image(drop, 550, 475, 50, 75);
+    image(drop, 550, 550, 50, 75);
+    image(drop, 550, 625, 50, 75);
+    image(drop, 550, 700, 50, 75);
+    
+    image(fire, 675, 250, 50, 75);
+    image(fire, 675, 325, 50, 75);
+    image(fire, 675, 400, 50, 75);
+    image(fire, 675, 475, 50, 75);
+    image(fire, 675, 550, 50, 75);
+    image(fire, 675, 625, 50, 75);
+    image(fire, 675, 700, 50, 75);
+    
+    image(drop, 775, 325, 50, 75);
+    image(drop, 775, 400, 50, 75);
+    image(drop, 775, 475, 50, 75);
+    image(drop, 775, 550, 50, 75);
+    image(drop, 775, 625, 50, 75);
+    image(drop, 775, 700, 50, 75);
+    
+    image(fire, 885, 175, 50, 75);
+    image(fire, 885, 250, 50, 75);
+    image(fire, 885, 325, 50, 75);
+    image(fire, 885, 400, 50, 75);
+    image(fire, 885, 475, 50, 75);
+    image(fire, 885, 550, 50, 75);
+    image(fire, 885, 625, 50, 75);
+    image(fire, 885, 700, 50, 75);
+    image(fire, 885, 175, 50, 75);
+    
+    image(drop, 985, 325, 50, 75);
+    image(drop, 985, 400, 50, 75);
+    image(drop, 985, 475, 50, 75);
+    image(drop, 985, 550, 50, 75);
+    image(drop, 985, 625, 50, 75);
+    image(drop, 985, 700, 50, 75);
+    
+    image(fire, 1150, 175, 50, 75);
+    image(fire, 1150, 250, 50, 75);
+    image(fire, 1150, 325, 50, 75);
+    image(fire, 1150, 400, 50, 75);
+    image(fire, 1150, 475, 50, 75);
+    image(fire, 1150, 550, 50, 75);
+    image(fire, 1150, 625, 50, 75);
+    image(fire, 1150, 700, 50, 75);
+    
+    image(drop, 1250, 325, 50, 75);
+    image(drop, 1250, 400, 50, 75);
+    image(drop, 1250, 475, 50, 75);
+    image(drop, 1250, 550, 50, 75);
+    image(drop, 1250, 625, 50, 75);
+    image(drop, 1250, 700, 50, 75);
+    
+    image(fire, 1350, 175, 50, 75);
+    image(fire, 1350, 250, 50, 75);
+    image(fire, 1350, 325, 50, 75);
+    image(fire, 1350, 400, 50, 75);
+    image(fire, 1350, 475, 50, 75);
+    image(fire, 1350, 550, 50, 75);
+    image(fire, 1350, 625, 50, 75);
+    image(fire, 1350, 700, 50, 75);
+    
+    image(fire, 1600, 100, 50, 75);
+    image(fire, 1600, 175, 50, 75);
+    image(fire, 1600, 250, 50, 75);
+    image(fire, 1600, 325, 50, 75);
+    image(fire, 1600, 400, 50, 75);
+    image(fire, 1600, 475, 50, 75);
+    image(fire, 1600, 550, 50, 75);
+    image(fire, 1600, 625, 50, 75);
+    image(fire, 1600, 700, 50, 75);
     
     if (mouseX >= 50 && mouseX <= 250 && mouseY >= 50 && mouseY <= 150){
       fill(255,255,200);
