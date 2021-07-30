@@ -1,5 +1,11 @@
+var graph_setting = true;
+
 function setup() {
   createCanvas(2000,850);
+  
+  graph_setting = true;
+  
+  
 }
 
 var temp_over_time = [57.55,57.68,57.81,57.94,58.07,58.2,58.33,58.46,58.59,58.72,58.85,58.98,59.11];
@@ -283,95 +289,133 @@ function draw() {
     
     fill(0,0,200);
     
-    let tempyear = temp_over_time[12];
+    var tempyear = temp_over_time[12];
     
-    if (mouseX > 400 && mouseX < 435 && mouseY <= 700){
-      details = 'Year: 1992       Average global temperature: '+ temp_over_time[0];
-      text(details,410,300);
-    } else if (mouseX > 440 && mouseX < 480 && mouseY <= 700){
-      details = 'Year: 1994       Average global temperature: '+ temp_over_time[1];
-      text(details,410,300);
-    } else if (mouseX > 480 && mouseX < 520 && mouseY <= 700){
-      details = 'Year: 1996       Average global temperature: '+ temp_over_time[2];
-      text(details,410,300);
-    } else if (mouseX > 520 && mouseX < 560 && mouseY <= 700){
-      details = 'Year: 1998       Average global temperature: '+ temp_over_time[3];
-      text(details,410,300);
-    } else if (mouseX > 560 && mouseX < 600 && mouseY <= 700){
-      details = 'Year: 2000       Average global temperature: '+ temp_over_time[4];
-      text(details,410,300);
-    } else if (mouseX > 600 && mouseX < 640 && mouseY <= 700){
-      details = 'Year: 2002       Average global temperature: '+ temp_over_time[5];
-      text(details,410,300);
-    } else if (mouseX > 640 && mouseX < 680 && mouseY <= 700){
-      details = 'Year: 2004       Average global temperature: '+ temp_over_time[6];
-      text(details,410,300);
-    } else if (mouseX > 680 && mouseX < 720 && mouseY <= 700){
-      details = 'Year: 2007       Average global temperature: '+ temp_over_time[7];
-      text(details,410,300);
-    } else if (mouseX > 720 && mouseX < 760 && mouseY <= 700){
-      details = 'Year: 2010       Average global temperature: '+ temp_over_time[8];
-      text(details,410,300);
-    } else if (mouseX > 760 && mouseX < 800 && mouseY <= 700){
-      details = 'Year: 2013       Average global temperature: '+ temp_over_time[9];
-      text(details,410,300);
-    } else if (mouseX > 800 && mouseX < 840 && mouseY <= 700){
-      details = 'Year: 2016       Average global temperature: '+ temp_over_time[10];
-      text(details,410,300);
-    } else if (mouseX > 840 && mouseX < 880 && mouseY <= 700){
-      details = 'Year: 2020       Average global temperature: '+ temp_over_time[11];
-      text(details,410,300);
-    } else if (mouseX > 880 && mouseX < 920 && mouseY <= 700){
-      details = 'Year: 2024       Average global temperature: '+ temp_over_time[12];
-      text(details,410,300);
-    } else if (mouseX > 920 && mouseX < 960 && mouseY <= 700){
-      tempyear = tempyear + 0.03;
-      details = 'Year: 2027       Average global temperature: '+ tempyear;
-      text(details,410,300);
-    } else if (mouseX > 960 && mouseX < 1000 && mouseY <= 700){
-      tempyear = tempyear + 0.03;
-      details = 'Year: 2031       Average global temperature: '+ tempyear;
-      text(details,410,300);
-    } else if (mouseX > 1000 && mouseX < 1040 && mouseY <= 700){
-      tempyear = tempyear + 0.03;
-      details = 'Year: 2035       Average global temperature: '+ tempyear;
-      text(details,410,300);
-    } else if (mouseX > 1040 && mouseX < 1080 && mouseY <= 700){
-      tempyear = tempyear + 0.03;
-      details = 'Year: 2039       Average global temperature: '+ tempyear;
-      text(details,410,300);
-    } else if (mouseX > 1080 && mouseX < 1120 && mouseY <= 700){
-      tempyear = tempyear + 0.03;
-      details = 'Year: 2041       Average global temperature: '+ tempyear;
-      text(details,410,300);
-    } else if (mouseX > 1120 && mouseX < 1160 && mouseY <= 700){
-      tempyear = tempyear + 0.03;
-      details = 'Year: 2044       Average global temperature: '+ tempyear;
-      text(details,410,300);
-    } else if (mouseX > 1160 && mouseX < 1200 && mouseY <= 700){
-      tempyear = tempyear + 0.03;
-      details = 'Year: 2047       Average global temperature: '+ tempyear;
-      text(details,410,300);
-    } else if (mouseX > 1200 && mouseX < 1240 && mouseY <= 700){
-      tempyear = tempyear + 0.03;
-      details = 'Year: 2050       Average global temperature: '+ tempyear;
-      text(details,410,300);
-    } else if (mouseX > 1240 && mouseX < 1280 && mouseY <= 700){
-      tempyear = tempyear + 0.03;
-      details = 'Year: 2052       Average global temperature: '+ tempyear;
-      text(details,410,300);
-    } else if (mouseX > 1280 && mouseX < 1320 && mouseY <= 700){
-      tempyear = tempyear + 0.03;
-      details = 'Year: 2055       Average global temperature: '+ tempyear;
-      text(details,410,300);
-    } else if (mouseX > 1320 && mouseX < 1360 && mouseY <= 700){
-      tempyear = tempyear + 0.03;
-      details = 'Year: 2057       Average global temperature: '+ tempyear;
-      text(details,410,300);
-    } else if (mouseX > 1360 && mouseX < 1400 && mouseY <= 700){
-      tempyear = tempyear + 0.03;
-      details = 'Year: 2060       Average global temperature: '+ tempyear;
-      text(details,410,300);
+    var i = 0;
+    
+    print(graph_setting);
+    
+    if (graph_setting){
+      
+      if (mouseX > 400 && mouseX < 435 && mouseY <= 700){
+        details = 'Year: 1992       Average global temperature: '+ temp_over_time[0];
+        text(details,410,300);
+      } else if (mouseX > 440 && mouseX < 480 && mouseY <= 700){
+        details = 'Year: 1994       Average global temperature: '+ temp_over_time[1];
+        text(details,410,300);
+      } else if (mouseX > 480 && mouseX < 520 && mouseY <= 700){
+        details = 'Year: 1996       Average global temperature: '+ temp_over_time[2];
+        text(details,410,300);
+      } else if (mouseX > 520 && mouseX < 560 && mouseY <= 700){
+        details = 'Year: 1998       Average global temperature: '+ temp_over_time[3];
+        text(details,410,300);
+      } else if (mouseX > 560 && mouseX < 600 && mouseY <= 700){
+        details = 'Year: 2000       Average global temperature: '+ temp_over_time[4];
+        text(details,410,300);
+      } else if (mouseX > 600 && mouseX < 640 && mouseY <= 700){
+        details = 'Year: 2002       Average global temperature: '+ temp_over_time[5];
+        text(details,410,300);
+      } else if (mouseX > 640 && mouseX < 680 && mouseY <= 700){
+        details = 'Year: 2004       Average global temperature: '+ temp_over_time[6];
+        text(details,410,300);
+      } else if (mouseX > 680 && mouseX < 720 && mouseY <= 700){
+        details = 'Year: 2007       Average global temperature: '+ temp_over_time[7];
+        text(details,410,300);
+      } else if (mouseX > 720 && mouseX < 760 && mouseY <= 700){
+        details = 'Year: 2010       Average global temperature: '+ temp_over_time[8];
+        text(details,410,300);
+      } else if (mouseX > 760 && mouseX < 800 && mouseY <= 700){
+        details = 'Year: 2013       Average global temperature: '+ temp_over_time[9];
+        text(details,410,300);
+      } else if (mouseX > 800 && mouseX < 840 && mouseY <= 700){
+        details = 'Year: 2016       Average global temperature: '+ temp_over_time[10];
+        text(details,410,300);
+      } else if (mouseX > 840 && mouseX < 880 && mouseY <= 700){
+        details = 'Year: 2020       Average global temperature: '+ temp_over_time[11];
+        text(details,410,300);
+      } else if (mouseX > 880 && mouseX < 920 && mouseY <= 700){
+        details = 'Year: 2024       Average global temperature: '+ temp_over_time[12];
+        text(details,410,300);
+      } else if (mouseX > 920 && mouseX < 960 && mouseY <= 700){
+        i = 1;
+        tempyear = temp_over_time[12] + (0.03*i);
+        details = 'Year: 2027       Average global temperature: '+ tempyear;
+        text(details,410,300);
+      } else if (mouseX > 960 && mouseX < 1000 && mouseY <= 700){
+        i = 2;
+        tempyear = temp_over_time[12] + (0.03*i);
+        details = 'Year: 2031       Average global temperature: '+ tempyear;
+        text(details,410,300);
+      } else if (mouseX > 1000 && mouseX < 1040 && mouseY <= 700){
+        i = 3;
+        tempyear = temp_over_time[12] + (0.03*i);
+        details = 'Year: 2035       Average global temperature: '+ tempyear;
+        text(details,410,300);
+      } else if (mouseX > 1040 && mouseX < 1080 && mouseY <= 700){
+        i = 4;
+        tempyear = temp_over_time[12] + (0.03*i);
+        details = 'Year: 2039       Average global temperature: '+ tempyear;
+        text(details,410,300);
+      } else if (mouseX > 1080 && mouseX < 1120 && mouseY <= 700){
+        i = 5;
+        tempyear = temp_over_time[12] + (0.03*i);
+        details = 'Year: 2041       Average global temperature: ' + tempyear;
+        text(details,410,300);
+      } else if (mouseX > 1120 && mouseX < 1160 && mouseY <= 700){
+        i = 6;
+        tempyear = temp_over_time[12] + (0.03*i);
+        details = 'Year: 2044       Average global temperature: '+ tempyear;
+        text(details,410,300);
+      } else if (mouseX > 1160 && mouseX < 1200 && mouseY <= 700){
+        i = 7;
+        tempyear = temp_over_time[12] + (0.03*i);
+        details = 'Year: 2047       Average global temperature: '+ tempyear;
+        text(details,410,300);
+      } else if (mouseX > 1200 && mouseX < 1240 && mouseY <= 700){
+        i = 8;
+        tempyear = temp_over_time[12] + (0.03*i);
+        details = 'Year: 2050       Average global temperature: '+ tempyear;
+        text(details,410,300);
+      } else if (mouseX > 1240 && mouseX < 1280 && mouseY <= 700){
+        i = 9;
+        tempyear = temp_over_time[12] + (0.03*i);
+        details = 'Year: 2052       Average global temperature: '+ tempyear;
+        text(details,410,300);
+      } else if (mouseX > 1280 && mouseX < 1320 && mouseY <= 700){
+        i = 10;
+        tempyear = temp_over_time[12] + (0.03*i);
+        details = 'Year: 2055       Average global temperature: '+ tempyear;
+        text(details,410,300);
+      } else if (mouseX > 1320 && mouseX < 1360 && mouseY <= 700){
+        i = 11;
+        tempyear = temp_over_time[12] + (0.03*i);
+        details = 'Year: 2057       Average global temperature: '+ tempyear;
+        text(details,410,300);
+      } else if (mouseX > 1360 && mouseX < 1400 && mouseY <= 700){
+        i = 12;
+        tempyear = temp_over_time[12] + (0.03*i);
+        details = 'Year: 2060       Average global temperature: '+ tempyear;
+        text(details,410,300);
+      }
+    }
+    
+    print(tempyear);
+    
+    textSize(30);
+    text('Display values when hovering',1600,550);
+    rect(1600,600,400,100);
+    if (graph_setting == true){
+      fill(0,200,150);
+      rect(1600,600,200,100);
+      fill(255,255,255);
+      textSize(60);
+      text('On',1650,670);
+    } else{
+      fill(0,200,150);
+      rect(1800,600,200,100);
+      fill(255,255,255);
+      textSize(60);
+      text('Off',1850,670);
     }
     
     if (mouseX >= 50 && mouseX <= 250 && mouseY >= 50 && mouseY <= 150){
@@ -649,6 +693,13 @@ function mousePressed(){
     }
     if (mouseX >= 1750 && mouseX <= 1950 && mouseY >= 50 && mouseY <= 150){
       screen_to_display = 'climate change simulator';
+    }
+    if (mouseX >= 1600 && mouseX <= 2000 && mouseY >= 600 && mouseY <= 700){
+      if (graph_setting){
+        graph_setting = false;
+      } else {
+        graph_setting = true;
+      }
     }
   } else if (screen_to_display == 'climate change simulator'){
     if (mouseX >= 50 && mouseX <= 250 && mouseY >= 50 && mouseY <= 150){
