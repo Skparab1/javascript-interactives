@@ -1,8 +1,19 @@
+// Shubham Parab       Final project
+// Climate change data visualizations
+//  1. interactive map: tells which areas are affected by natural disasters caused by climate change
+//  2. interactive graph: shows average global temperature over time
+//  3. climate change simulator: shows the effects of climate change (water level, iceberg mass decrease)
+//  4. wildfire and precipitation graph: shows amount of wildfires growing over time.
+
 var graph_setting = true;
 
 var fire_setting = true;
 
 var drop_setting = true;
+
+var graph_color = true;
+
+var map_setting = true;
 
 function setup() {
   createCanvas(2000,850);
@@ -10,7 +21,8 @@ function setup() {
   fire_setting = true;
   drop_setting = true;
   graph_setting = true;
-  
+  graph_color = true;
+  map_setting = true;
   
 }
 
@@ -119,6 +131,8 @@ function draw() {
     text('Interactive climate change map',550,75);
     textSize(45);
     text('How climate change is affecting your area',550,125);
+    textSize(35);
+    text('Hover over a natural disaster for more info',550,200);
     
     image(map, 520, 250, 700, 550);
     
@@ -146,7 +160,7 @@ function draw() {
     ellipse(1300,450,50,50);
     text('Snowstorm',1350,465);
     
-    if (mouseX >= 100 && mouseX <= 450 && mouseY >= 250 && mouseY <= 350){
+    if (mouseX >= 100 && mouseX <= 450 && mouseY >= 250 && mouseY <= 350 && map_setting == true){
       fill(0,0,0);
       textSize(60);
       text('Wildfires',1275,575);
@@ -156,7 +170,7 @@ function draw() {
       text('which can spark wildfires.',1275,750);
     }
     
-    if (mouseX >= 100 && mouseX <= 450 && mouseY >= 400 && mouseY <= 500){
+    if (mouseX >= 100 && mouseX <= 450 && mouseY >= 400 && mouseY <= 500 && map_setting == true){
       fill(0,0,0);
       textSize(60);
       text('Droughts',1275,575);
@@ -166,7 +180,7 @@ function draw() {
       text('causing a drought.',1275,750);
     }
     
-    if (mouseX >= 100 && mouseX <= 450 && mouseY >= 700 && mouseY <= 800){
+    if (mouseX >= 100 && mouseX <= 450 && mouseY >= 700 && mouseY <= 800 && map_setting == true){
       fill(0,0,0);
       textSize(60);
       text('Flooding',1275,575);
@@ -176,7 +190,7 @@ function draw() {
       text('causing flooding.',1275,750);
     }
     
-    if (mouseX >= 100 && mouseX <= 450 && mouseY >= 550 && mouseY <= 650){
+    if (mouseX >= 100 && mouseX <= 450 && mouseY >= 550 && mouseY <= 650 && map_setting == true){
       fill(0,0,0);
       textSize(60);
       text('Hurricanes',1275,575);
@@ -186,7 +200,7 @@ function draw() {
       text('them to be faster and more distructive.',1275,750); 
     }
     
-    if (mouseX >= 1275 && mouseX <= 1575 && mouseY >= 250 && mouseY <= 350){
+    if (mouseX >= 1275 && mouseX <= 1575 && mouseY >= 250 && mouseY <= 350 && map_setting == true){
       fill(0,0,0);
       textSize(60);
       text('Tornados',1275,575);
@@ -196,7 +210,7 @@ function draw() {
       text('causing tornados.',1275,750);
     }
     
-    if (mouseX >= 1275 && mouseX <= 1575 && mouseY >= 400 && mouseY <= 500){
+    if (mouseX >= 1275 && mouseX <= 1575 && mouseY >= 400 && mouseY <= 500 && map_setting == true){
       fill(0,0,0);
       textSize(60);
       text('Snowstorms',1275,575);
@@ -204,6 +218,15 @@ function draw() {
       text('Climate change can affect air currents',1275,650);
       text('in the atmosphere, which can change weather,',1275,700);
       text('patterns and cause snowstorms.',1275,750);
+    }
+    
+    if ((mouseX >= 550 && mouseX <= 580 && mouseY >= 460 && mouseY <= 490) || (mouseX >= 623 && mouseX <= 653 && mouseY >= 500 && mouseY <= 530) || (mouseX >= 589 && mouseX <= 380 && mouseY >= 619 && mouseY <= 410)){
+      fill(0,0,0);
+      textSize(60);
+      text('Wildfires',1275,575);
+      textSize(35);
+      text('Summer and fall wildfires',1275,650);
+      text('are common on the west coast',1275,700);
     }
     
     fill(215,0,0);
@@ -238,6 +261,24 @@ function draw() {
     ellipse(800,500,30,30);
     ellipse(950,450,30,30);
     ellipse(1000,450,30,30);
+    
+    fill(0,0,0);
+    textSize(23);
+    text('Display info when hovering',1715,350);
+    rect(1725,400,150,100);
+    if (map_setting == true){
+      fill(0,200,150);
+      rect(1725,400,75,100);
+      fill(255,255,255);
+      textSize(30);
+      text('On',1750,470);
+    } else{
+      fill(200,10,0);
+      rect(1800,400,75,100);
+      fill(255,255,255);
+      textSize(30);
+      text('Off',1825,470);
+    }
     
     if (mouseX >= 50 && mouseX <= 250 && mouseY >= 50 && mouseY <= 150){
       fill(255,255,200);
@@ -289,10 +330,24 @@ function draw() {
     fill(255,100,0);
     
     for(i = 0; i < 13; i ++){
+      if (graph_color){
+        if ((i == 0 && mouseX > 400 && mouseX < 435 && mouseY <= 700) || (i == 1 && mouseX > 440 && mouseX < 480 && mouseY <= 700)|| (i == 2 && mouseX > 480 && mouseX < 520 && mouseY <= 700)|| (i == 3 && mouseX > 520 && mouseX < 560 && mouseY <= 700)|| (i == 4 && mouseX > 560 && mouseX < 600 && mouseY <= 700)|| (i == 5 && mouseX > 600 && mouseX < 640 && mouseY <= 700)|| (i == 6 && mouseX > 640 && mouseX < 680 && mouseY <= 700)|| (i == 7 && mouseX > 680 && mouseX < 720 && mouseY <= 700)|| (i == 8 && mouseX > 720 && mouseX < 760 && mouseY <= 700)|| (i == 9 && mouseX > 760 && mouseX < 770 && mouseY <= 700)|| (i == 10 && mouseX > 770 && mouseX < 780 && mouseY <= 700)|| (i == 11 && mouseX > 780 && mouseX < 800 && mouseY <= 700)|| (i == 12 && mouseX > 800 && mouseX < 820 && mouseY <= 700)|| (i == 13 && mouseX > 820 && mouseX < 840 && mouseY <= 700)){
+          fill(225,200,0);
+        } else {
+          fill(255,100,0);
+        }
+      }
       rect(400+(35*i),700,30,(-100*(temp_over_time[i]-57)));
     }
     
     for(i = 0; i < 15; i ++){
+      if (graph_color){
+        if ((i == 0 && mouseX > 840 && mouseX < 870 && mouseY <= 700) || (i == 1 && mouseX > 870 && mouseX < 900 && mouseY <= 700)|| (i == 2 && mouseX > 900 && mouseX < 930 && mouseY <= 700)|| (i == 3 && mouseX > 930 && mouseX < 960 && mouseY <= 700)|| (i == 4 && mouseX > 960 && mouseX < 990 && mouseY <= 700)|| (i == 5 && mouseX > 990 && mouseX < 1020 && mouseY <= 700)|| (i == 6 && mouseX > 1020 && mouseX < 1050 && mouseY <= 700)|| (i == 7 && mouseX > 1050 && mouseX < 1080 && mouseY <= 700)|| (i == 8 && mouseX > 1080 && mouseX < 1210 && mouseY <= 700)|| (i == 9 && mouseX > 1210 && mouseX < 1240 && mouseY <= 700)|| (i == 10 && mouseX > 1240 && mouseX < 1270 && mouseY <= 700)|| (i == 11 && mouseX > 1270 && mouseX < 1300 && mouseY <= 700)|| (i == 12 && mouseX > 1300 && mouseX < 1330 && mouseY <= 700)|| (i == 13 && mouseX > 1330 && mouseX < 1360 && mouseY <= 700)|| (i == 14 && mouseX > 1360 && mouseX < 1390 && mouseY <= 700)|| (i == 15 && mouseX > 1390 && mouseX < 1420 && mouseY <= 700)){
+          fill(225,200,0);
+        } else {
+          fill(255,100,0);
+        }
+      }
       rect(855+(35*i),700,30,(-100*((i*0.13)+59.11-57)));
     }
     
@@ -420,11 +475,29 @@ function draw() {
       textSize(60);
       text('On',1650,670);
     } else{
-      fill(0,200,150);
+      fill(200,10,0);
       rect(1800,600,200,100);
       fill(255,255,255);
       textSize(60);
       text('Off',1850,670);
+    }
+    
+    fill(0,0,200);
+    textSize(30);
+    text('Change color when hovering',1600,350);
+    rect(1600,400,400,100);
+    if (graph_color == true){
+      fill(0,200,150);
+      rect(1600,400,200,100);
+      fill(255,255,255);
+      textSize(60);
+      text('On',1650,470);
+    } else{
+      fill(200,10,0);
+      rect(1800,400,200,100);
+      fill(255,255,255);
+      textSize(60);
+      text('Off',1850,470);
     }
     
     if (mouseX >= 50 && mouseX <= 250 && mouseY >= 50 && mouseY <= 150){
@@ -762,7 +835,7 @@ function draw() {
       textSize(30);
       text('On',1850,470);
     } else{
-      fill(0,200,150);
+      fill(200,10,0);
       rect(1900,400,75,100);
       fill(255,255,255);
       textSize(30);
@@ -780,7 +853,7 @@ function draw() {
       textSize(30);
       text('On',1850,670);
     } else{
-      fill(0,200,150);
+      fill(200,10,0);
       rect(1900,600,75,100);
       fill(255,255,255);
       textSize(30);
@@ -814,7 +887,6 @@ function draw() {
     text('Next',1800,120);
      
   }
-
 }
 
 function mousePressed(){
@@ -848,6 +920,13 @@ function mousePressed(){
     if (mouseX >= 1750 && mouseX <= 1950 && mouseY >= 50 && mouseY <= 150){
       screen_to_display = 'interactive graph';
     }
+    if (mouseX >= 1725 && mouseX <= 1875 && mouseY >= 400 && mouseY <= 500){
+      if (map_setting){
+        map_setting = false;
+      } else {
+        map_setting = true;
+      }
+    }
   } else if (screen_to_display == 'interactive graph'){
     if (mouseX >= 50 && mouseX <= 250 && mouseY >= 50 && mouseY <= 150){
       screen_to_display = 'main menu';
@@ -860,6 +939,13 @@ function mousePressed(){
         graph_setting = false;
       } else {
         graph_setting = true;
+      }
+    }
+    if (mouseX >= 1600 && mouseX <= 2000 && mouseY >= 400 && mouseY <= 500){
+      if (graph_color){
+        graph_color = false;
+      } else {
+        graph_color = true;
       }
     }
   } else if (screen_to_display == 'climate change simulator'){
