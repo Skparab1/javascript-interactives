@@ -2,6 +2,8 @@ function setup() {
   createCanvas(2000,850);
 }
 
+var temp_over_time = [57.55,57.68,57.81,57.94,58.07,58.2,58.33,58.46,58.59,58.72,58.85,58.98,59.11];
+
 var screen_to_display = 'main menu';
 
 var slidery = 500;
@@ -17,6 +19,7 @@ var iceberg3 = 150-((yearin-2040)*2);
 var waterlevel = (yearin-2000);
 
 var avgdepth = 12100;
+
 
 function preload(){
   map = loadImage("map.jpg");
@@ -256,6 +259,120 @@ function draw() {
     fill(0,0,0);
     textSize(60);
     text('Interactive climate change graph',550,75);
+    
+    fill(255,255,255);
+    stroke(0,0,0);
+    rect(400,200,1000,500);
+    fill(0,0,0);
+    textSize(30);
+    text('57 degrees --',205,670);
+    text('58 degrees --',205,520);
+    text('59 degrees --',205,370);
+    text('60 degrees --',205,220);
+    text('|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |',400,720);
+    text('1990        2000        2010        2020        2030        2040        2050        2060',400,750);
+    fill(255,100,0);
+    
+    for(i = 0; i < 13; i ++){
+      rect(400+(35*i),700,30,(-100*(temp_over_time[i]-57)));
+    }
+    
+    for(i = 0; i < 15; i ++){
+      rect(855+(35*i),700,30,(-100*((i*0.13)+59.11-57)));
+    }
+    
+    fill(0,0,200);
+    
+    let tempyear = temp_over_time[12];
+    
+    if (mouseX > 400 && mouseX < 435 && mouseY <= 700){
+      details = 'Year: 1992       Average global temperature: '+ temp_over_time[0];
+      text(details,410,300);
+    } else if (mouseX > 440 && mouseX < 480 && mouseY <= 700){
+      details = 'Year: 1994       Average global temperature: '+ temp_over_time[1];
+      text(details,410,300);
+    } else if (mouseX > 480 && mouseX < 520 && mouseY <= 700){
+      details = 'Year: 1996       Average global temperature: '+ temp_over_time[2];
+      text(details,410,300);
+    } else if (mouseX > 520 && mouseX < 560 && mouseY <= 700){
+      details = 'Year: 1998       Average global temperature: '+ temp_over_time[3];
+      text(details,410,300);
+    } else if (mouseX > 560 && mouseX < 600 && mouseY <= 700){
+      details = 'Year: 2000       Average global temperature: '+ temp_over_time[4];
+      text(details,410,300);
+    } else if (mouseX > 600 && mouseX < 640 && mouseY <= 700){
+      details = 'Year: 2002       Average global temperature: '+ temp_over_time[5];
+      text(details,410,300);
+    } else if (mouseX > 640 && mouseX < 680 && mouseY <= 700){
+      details = 'Year: 2004       Average global temperature: '+ temp_over_time[6];
+      text(details,410,300);
+    } else if (mouseX > 680 && mouseX < 720 && mouseY <= 700){
+      details = 'Year: 2007       Average global temperature: '+ temp_over_time[7];
+      text(details,410,300);
+    } else if (mouseX > 720 && mouseX < 760 && mouseY <= 700){
+      details = 'Year: 2010       Average global temperature: '+ temp_over_time[8];
+      text(details,410,300);
+    } else if (mouseX > 760 && mouseX < 800 && mouseY <= 700){
+      details = 'Year: 2013       Average global temperature: '+ temp_over_time[9];
+      text(details,410,300);
+    } else if (mouseX > 800 && mouseX < 840 && mouseY <= 700){
+      details = 'Year: 2016       Average global temperature: '+ temp_over_time[10];
+      text(details,410,300);
+    } else if (mouseX > 840 && mouseX < 880 && mouseY <= 700){
+      details = 'Year: 2020       Average global temperature: '+ temp_over_time[11];
+      text(details,410,300);
+    } else if (mouseX > 880 && mouseX < 920 && mouseY <= 700){
+      details = 'Year: 2024       Average global temperature: '+ temp_over_time[12];
+      text(details,410,300);
+    } else if (mouseX > 920 && mouseX < 960 && mouseY <= 700){
+      tempyear = tempyear + 0.03;
+      details = 'Year: 2027       Average global temperature: '+ tempyear;
+      text(details,410,300);
+    } else if (mouseX > 960 && mouseX < 1000 && mouseY <= 700){
+      tempyear = tempyear + 0.03;
+      details = 'Year: 2031       Average global temperature: '+ tempyear;
+      text(details,410,300);
+    } else if (mouseX > 1000 && mouseX < 1040 && mouseY <= 700){
+      tempyear = tempyear + 0.03;
+      details = 'Year: 2035       Average global temperature: '+ tempyear;
+      text(details,410,300);
+    } else if (mouseX > 1040 && mouseX < 1080 && mouseY <= 700){
+      tempyear = tempyear + 0.03;
+      details = 'Year: 2039       Average global temperature: '+ tempyear;
+      text(details,410,300);
+    } else if (mouseX > 1080 && mouseX < 1120 && mouseY <= 700){
+      tempyear = tempyear + 0.03;
+      details = 'Year: 2041       Average global temperature: '+ tempyear;
+      text(details,410,300);
+    } else if (mouseX > 1120 && mouseX < 1160 && mouseY <= 700){
+      tempyear = tempyear + 0.03;
+      details = 'Year: 2044       Average global temperature: '+ tempyear;
+      text(details,410,300);
+    } else if (mouseX > 1160 && mouseX < 1200 && mouseY <= 700){
+      tempyear = tempyear + 0.03;
+      details = 'Year: 2047       Average global temperature: '+ tempyear;
+      text(details,410,300);
+    } else if (mouseX > 1200 && mouseX < 1240 && mouseY <= 700){
+      tempyear = tempyear + 0.03;
+      details = 'Year: 2050       Average global temperature: '+ tempyear;
+      text(details,410,300);
+    } else if (mouseX > 1240 && mouseX < 1280 && mouseY <= 700){
+      tempyear = tempyear + 0.03;
+      details = 'Year: 2052       Average global temperature: '+ tempyear;
+      text(details,410,300);
+    } else if (mouseX > 1280 && mouseX < 1320 && mouseY <= 700){
+      tempyear = tempyear + 0.03;
+      details = 'Year: 2055       Average global temperature: '+ tempyear;
+      text(details,410,300);
+    } else if (mouseX > 1320 && mouseX < 1360 && mouseY <= 700){
+      tempyear = tempyear + 0.03;
+      details = 'Year: 2057       Average global temperature: '+ tempyear;
+      text(details,410,300);
+    } else if (mouseX > 1360 && mouseX < 1400 && mouseY <= 700){
+      tempyear = tempyear + 0.03;
+      details = 'Year: 2060       Average global temperature: '+ tempyear;
+      text(details,410,300);
+    }
     
     if (mouseX >= 50 && mouseX <= 250 && mouseY >= 50 && mouseY <= 150){
       fill(255,255,200);
