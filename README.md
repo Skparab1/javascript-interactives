@@ -21,7 +21,7 @@ Climate change visualzations and widgets:
 
 - Wildfire and precipitation graph:
 
-![](gif_images/wildfire_precipitation_graph.gif)
+![](gif_images/fire_precipitation_graph.gif)
 
 - Socially distant mouse following
   - box will follow mouse at fixed distance
