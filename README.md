@@ -7,6 +7,10 @@ Climate change visualzations and widgets:
 
 ![](gif_images/main_menu.gif)
 
+- Interactive map:
+
+![](gif_images/interactive_map.gif)
+
 - Socially distant mouse following
   - box will follow mouse at fixed distance
 
