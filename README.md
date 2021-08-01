@@ -19,6 +19,10 @@ Climate change visualzations and widgets:
 
 ![](gif_images/climate_change_simulator.gif)
 
+- Wildfire and precipitation graph:
+
+![](gif_images/wildfire_precipitation_graph.gif)
+
 - Socially distant mouse following
   - box will follow mouse at fixed distance
 
