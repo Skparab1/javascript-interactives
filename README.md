@@ -17,7 +17,7 @@ Climate change visualzations and widgets:
 
 - Climate change simulator:
 
-![](gif_images/main_menu.gif)
+![](gif_images/climate_change_simulator.gif)
 
 - Socially distant mouse following
   - box will follow mouse at fixed distance
