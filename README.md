@@ -11,6 +11,14 @@ Climate change visualzations and widgets:
 
 ![](gif_images/interactive_map.gif)
 
+- Interactive graph:
+
+![](gif_images/interactive_graph.gif)
+
+- Climate change simulator:
+
+![](gif_images/main_menu.gif)
+
 - Socially distant mouse following
   - box will follow mouse at fixed distance
 
