@@ -1,6 +1,12 @@
 # javascript-interactives
 set of interactive javascript codes
 
+Climate change visualzations and widgets:
+
+- Main menu:
+
+![](gif_images/main_menu.gif)
+
 - Socially distant mouse following
   - box will follow mouse at fixed distance
 
