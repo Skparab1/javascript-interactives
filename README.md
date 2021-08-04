@@ -1,5 +1,5 @@
 # javascript-interactives
-set of interactive javascript codes
+Interactive javascript programs
 
 Climate change visualzations and widgets:
 
